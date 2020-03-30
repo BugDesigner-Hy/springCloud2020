@@ -1,0 +1,16 @@
+###consul服务端口号
+server:
+  port: 8005
+
+spring:
+  application:
+    name: consul-provider-payment
+  ####consul注册中心地址
+  cloud:
+    consul:
+      host: 47.104.102.96
+      port: 8500
+      discovery:
+#        hostname: 3041y204c7.wicp.vip
+        service-name: ${spring.application.name}
+        health-check-url: http://3041y204c7.wicp.vip/actuator/health
